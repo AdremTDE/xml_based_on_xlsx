@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V18" />
+  <SW.Blocks.FB ID="0">
+    <AttributeList>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="Input" />
+  <Section Name="Output" />
+  <Section Name="InOut" />
+  <Section Name="Static" />
+  <Section Name="Temp" />
+  <Section Name="Constant" />
+</Sections></Interface>
+      <MemoryLayout>Optimized</MemoryLayout>
+      <MemoryReserve>100</MemoryReserve>
+      <Name>FB_PT_Motors</Name>
+      <Namespace />
+      <Number>2</Number>
+      <ProgrammingLanguage>LAD</ProgrammingLanguage>
+      <SetENOAutomatically>false</SetENOAutomatically>
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <SW.Blocks.CompileUnit ID="3" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LiteralConstant" UId="21">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'partmotor'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="GlobalVariable" UId="22">
+      <Symbol>
+        <Component Name="DB_PT" />
+        <Component Name="Motors" />
+        <Component Name="partmotor" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="23">
+      <Symbol>
+        <Component Name="Processes" />
+        <Component Name="PT-MF" />
+      </Symbol>
+    </Access>
+    <Call UId="24">
+      <CallInfo Name="FB_Motor" BlockType="FB">
+        <Instance Scope="GlobalVariable" UId="25">
+          <Component Name="IDBM_partmotor" />
+        </Instance>
+        <Parameter Name="I_sName" Section="Input" Type="String" />
+        <Parameter Name="I_sELNum" Section="Input" Type="String" />
+        <Parameter Name="I_Type" Section="Input" Type="Byte" />
+        <Parameter Name="I_bSafetyOK" Section="Input" Type="Bool" />
+        <Parameter Name="I_bMSOK" Section="Input" Type="Bool" />
+        <Parameter Name="I_bEDM_Error" Section="Input" Type="Bool" />
+        <Parameter Name="I_bEnableFW" Section="Input" Type="Bool" />
+        <Parameter Name="I_bEnableBw" Section="Input" Type="Bool" />
+        <Parameter Name="I_bTP" Section="Input" Type="Bool" />
+        <Parameter Name="I_bRD" Section="Input" Type="Bool" />
+        <Parameter Name="I_lrRDtime" Section="Input" Type="LReal" />
+        <Parameter Name="I_bInterlockManual" Section="Input" Type="Bool" />
+        <Parameter Name="I_bInterlockAuto" Section="Input" Type="Bool" />
+        <Parameter Name="I_bAuto_Stop" Section="Input" Type="Bool" />
+        <Parameter Name="I_bAuto_FW" Section="Input" Type="Bool" />
+        <Parameter Name="I_bAuto_BW" Section="Input" Type="Bool" />
+        <Parameter Name="I_lrMaxSpeed" Section="Input" Type="LReal" />
+        <Parameter Name="I_lrMinSpeed" Section="Input" Type="LReal" />
+        <Parameter Name="I_lrStartUpTime" Section="Input" Type="LReal" />
+        <Parameter Name="I_lrShutdownTime" Section="Input" Type="LReal" />
+        <Parameter Name="I_lrTimeToRunEmpty" Section="Input" Type="LReal" />
+        <Parameter Name="I_lrAutoSpeed" Section="Input" Type="LReal" />
+        <Parameter Name="HW_ID_Drive" Section="Input" Type="HW_SUBMODULE" />
+        <Parameter Name="Q_ID" Section="Output" Type="DInt" />
+        <Parameter Name="Q_lrSpeedToDrive" Section="Output" Type="LReal" />
+        <Parameter Name="Q_bRunFW" Section="Output" Type="Bool" />
+        <Parameter Name="Q_bRunBW" Section="Output" Type="Bool" />
+        <Parameter Name="UDT_Motor" Section="InOut" Type="&quot;UDT_Motor_HMI&quot;" />
+        <Parameter Name="UDT_Process" Section="InOut" Type="&quot;UDT_Process&quot;" />
+      </CallInfo>
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="52">
+      <Powerrail />
+      <NameCon UId="24" Name="en" />
+    </Wire>
+    <Wire UId="53">
+      <IdentCon UId="21" />
+      <NameCon UId="24" Name="I_sName" />
+    </Wire>
+    <Wire UId="54">
+      <OpenCon UId="26" />
+      <NameCon UId="24" Name="I_sELNum" />
+    </Wire>
+    <Wire UId="55">
+      <OpenCon UId="27" />
+      <NameCon UId="24" Name="I_Type" />
+    </Wire>
+    <Wire UId="56">
+      <OpenCon UId="28" />
+      <NameCon UId="24" Name="I_bSafetyOK" />
+    </Wire>
+    <Wire UId="57">
+      <OpenCon UId="29" />
+      <NameCon UId="24" Name="I_bMSOK" />
+    </Wire>
+    <Wire UId="58">
+      <OpenCon UId="30" />
+      <NameCon UId="24" Name="I_bEDM_Error" />
+    </Wire>
+    <Wire UId="59">
+      <OpenCon UId="31" />
+      <NameCon UId="24" Name="I_bEnableFW" />
+    </Wire>
+    <Wire UId="60">
+      <OpenCon UId="32" />
+      <NameCon UId="24" Name="I_bEnableBw" />
+    </Wire>
+    <Wire UId="61">
+      <OpenCon UId="33" />
+      <NameCon UId="24" Name="I_bTP" />
+    </Wire>
+    <Wire UId="62">
+      <OpenCon UId="34" />
+      <NameCon UId="24" Name="I_bRD" />
+    </Wire>
+    <Wire UId="63">
+      <OpenCon UId="35" />
+      <NameCon UId="24" Name="I_lrRDtime" />
+    </Wire>
+    <Wire UId="64">
+      <OpenCon UId="36" />
+      <NameCon UId="24" Name="I_bInterlockManual" />
+    </Wire>
+    <Wire UId="65">
+      <OpenCon UId="37" />
+      <NameCon UId="24" Name="I_bInterlockAuto" />
+    </Wire>
+    <Wire UId="66">
+      <OpenCon UId="38" />
+      <NameCon UId="24" Name="I_bAuto_Stop" />
+    </Wire>
+    <Wire UId="67">
+      <OpenCon UId="39" />
+      <NameCon UId="24" Name="I_bAuto_FW" />
+    </Wire>
+    <Wire UId="68">
+      <OpenCon UId="40" />
+      <NameCon UId="24" Name="I_bAuto_BW" />
+    </Wire>
+    <Wire UId="69">
+      <OpenCon UId="41" />
+      <NameCon UId="24" Name="I_lrMaxSpeed" />
+    </Wire>
+    <Wire UId="70">
+      <OpenCon UId="42" />
+      <NameCon UId="24" Name="I_lrMinSpeed" />
+    </Wire>
+    <Wire UId="71">
+      <OpenCon UId="43" />
+      <NameCon UId="24" Name="I_lrStartUpTime" />
+    </Wire>
+    <Wire UId="72">
+      <OpenCon UId="44" />
+      <NameCon UId="24" Name="I_lrShutdownTime" />
+    </Wire>
+    <Wire UId="73">
+      <OpenCon UId="45" />
+      <NameCon UId="24" Name="I_lrTimeToRunEmpty" />
+    </Wire>
+    <Wire UId="74">
+      <OpenCon UId="46" />
+      <NameCon UId="24" Name="I_lrAutoSpeed" />
+    </Wire>
+    <Wire UId="75">
+      <OpenCon UId="47" />
+      <NameCon UId="24" Name="HW_ID_Drive" />
+    </Wire>
+    <Wire UId="76">
+      <IdentCon UId="22" />
+      <NameCon UId="24" Name="UDT_Motor" />
+    </Wire>
+    <Wire UId="77">
+      <IdentCon UId="23" />
+      <NameCon UId="24" Name="UDT_Process" />
+    </Wire>
+    <Wire UId="78">
+      <NameCon UId="24" Name="Q_ID" />
+      <OpenCon UId="48" />
+    </Wire>
+    <Wire UId="79">
+      <NameCon UId="24" Name="Q_lrSpeedToDrive" />
+      <OpenCon UId="49" />
+    </Wire>
+    <Wire UId="80">
+      <NameCon UId="24" Name="Q_bRunFW" />
+      <OpenCon UId="50" />
+    </Wire>
+    <Wire UId="81">
+      <NameCon UId="24" Name="Q_bRunBW" />
+      <OpenCon UId="51" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="4" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="5" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="6" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="7" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>partmotor</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <MultilingualText ID="D" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="E" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Blocks.FB>
+</Document>
